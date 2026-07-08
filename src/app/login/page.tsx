@@ -1,8 +1,20 @@
-// Supabase email/password login. Built in Part D Step 3.
-export default function LoginPage() {
+import { redirect } from "next/navigation";
+import { createClient } from "@/lib/supabase/server";
+import LoginForm from "./LoginForm";
+
+export default async function LoginPage() {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  if (user) {
+    redirect("/patients");
+  }
+
   return (
-    <main className="flex min-h-screen items-center justify-center p-4">
-      <h1 className="text-2xl font-semibold">MediMinder Admin Login</h1>
+    <main className="flex min-h-screen items-center justify-center bg-zinc-50 p-4">
+      <LoginForm />
     </main>
   );
 }
