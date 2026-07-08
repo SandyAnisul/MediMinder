@@ -13,6 +13,9 @@ export const en = {
   buttonTaken: "✅ Taken",
   buttonSkip: "⏭️ Skip",
   linked: (role: string, patient: string) => `You're connected as ${role} for ${patient}.`,
+  help: "Commands:\n/today — see today's medicine schedule\n/help — show this message",
+  notLinked: "This chat isn't linked to a patient yet. Ask the admin for your invite link.",
+  invalidLinkCode: "That invite link is invalid or already used. Ask the admin for a new one.",
 };
 
 export type Dictionary = typeof en;
