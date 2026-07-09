@@ -65,10 +65,10 @@ export default async function PatientOverviewPage({
               return (
                 <div key={session.id} className="rounded-lg border border-zinc-200 bg-white p-4">
                   <h3 className="text-sm font-medium text-zinc-900">
-                    {session.name} <span className="text-zinc-400">({session.start_time})</span>
+                    {session.name} <span className="text-zinc-500">({session.start_time})</span>
                   </h3>
                   {sessionMedicines.length === 0 ? (
-                    <p className="mt-1 text-sm text-zinc-400">No medicines</p>
+                    <p className="mt-1 text-sm text-zinc-500">No medicines</p>
                   ) : (
                     <ul className="mt-2 space-y-1">
                       {sessionMedicines.map((m) => (

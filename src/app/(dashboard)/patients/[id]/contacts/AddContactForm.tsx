@@ -20,8 +20,15 @@ export default function AddContactForm({ patientId }: { patientId: string }) {
       className="flex flex-wrap items-end gap-3 rounded-lg border border-zinc-200 bg-white p-4"
     >
       <div className="space-y-1">
-        <label className="block text-xs font-medium text-zinc-600">Role</label>
-        <select name="role" defaultValue="caregiver" className="rounded-md border border-zinc-300 px-2 py-1 text-sm">
+        <label htmlFor="new-contact-role" className="block text-xs font-medium text-zinc-600">
+          Role
+        </label>
+        <select
+          id="new-contact-role"
+          name="role"
+          defaultValue="caregiver"
+          className="rounded-md border border-zinc-300 px-2 py-1 text-sm"
+        >
           <option value="patient">Patient</option>
           <option value="caregiver">Caregiver</option>
           <option value="supervisor">Supervisor</option>
@@ -29,12 +36,27 @@ export default function AddContactForm({ patientId }: { patientId: string }) {
         </select>
       </div>
       <div className="space-y-1">
-        <label className="block text-xs font-medium text-zinc-600">Name</label>
-        <input name="name" type="text" required className="rounded-md border border-zinc-300 px-2 py-1 text-sm" />
+        <label htmlFor="new-contact-name" className="block text-xs font-medium text-zinc-600">
+          Name
+        </label>
+        <input
+          id="new-contact-name"
+          name="name"
+          type="text"
+          required
+          className="rounded-md border border-zinc-300 px-2 py-1 text-sm"
+        />
       </div>
       <div className="space-y-1">
-        <label className="block text-xs font-medium text-zinc-600">Phone (optional)</label>
-        <input name="phone" type="text" className="rounded-md border border-zinc-300 px-2 py-1 text-sm" />
+        <label htmlFor="new-contact-phone" className="block text-xs font-medium text-zinc-600">
+          Phone (optional)
+        </label>
+        <input
+          id="new-contact-phone"
+          name="phone"
+          type="text"
+          className="rounded-md border border-zinc-300 px-2 py-1 text-sm"
+        />
       </div>
       <button
         type="submit"

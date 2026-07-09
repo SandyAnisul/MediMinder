@@ -15,7 +15,7 @@ export default function SessionRow({ patientId, session }: { patientId: string; 
     return (
       <li className="flex items-center justify-between px-4 py-3">
         <span className="text-base text-zinc-900">
-          {session.name} <span className="text-zinc-400">({session.start_time})</span>
+          {session.name} <span className="text-zinc-500">({session.start_time})</span>
         </span>
         <div className="flex items-center gap-3">
           <button
@@ -45,8 +45,11 @@ export default function SessionRow({ patientId, session }: { patientId: string; 
         className="flex flex-wrap items-end gap-3"
       >
         <div className="space-y-1">
-          <label className="block text-xs font-medium text-zinc-600">Name</label>
+          <label htmlFor={`name-${session.id}`} className="block text-xs font-medium text-zinc-600">
+            Name
+          </label>
           <input
+            id={`name-${session.id}`}
             name="name"
             type="text"
             defaultValue={session.name}
@@ -55,8 +58,11 @@ export default function SessionRow({ patientId, session }: { patientId: string; 
           />
         </div>
         <div className="space-y-1">
-          <label className="block text-xs font-medium text-zinc-600">Start time</label>
+          <label htmlFor={`start_time-${session.id}`} className="block text-xs font-medium text-zinc-600">
+            Start time
+          </label>
           <input
+            id={`start_time-${session.id}`}
             name="start_time"
             type="time"
             defaultValue={session.start_time.slice(0, 5)}
@@ -65,8 +71,11 @@ export default function SessionRow({ patientId, session }: { patientId: string; 
           />
         </div>
         <div className="space-y-1">
-          <label className="block text-xs font-medium text-zinc-600">Order</label>
+          <label htmlFor={`sort_order-${session.id}`} className="block text-xs font-medium text-zinc-600">
+            Order
+          </label>
           <input
+            id={`sort_order-${session.id}`}
             name="sort_order"
             type="number"
             defaultValue={session.sort_order}

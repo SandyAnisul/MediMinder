@@ -27,7 +27,7 @@ export default function DefaultsForm({ defaults }: { defaults: Defaults }) {
           min={1}
           defaultValue={defaults.escalation_minutes}
           required
-          className="w-full rounded-md border border-zinc-300 px-3 py-2 text-base focus:border-zinc-500 focus:outline-none"
+          className="w-full rounded-md border border-zinc-300 px-3 py-2 text-base focus:border-zinc-500 focus:outline-none focus:ring-2 focus:ring-zinc-900 focus:ring-offset-1"
         />
       </div>
 
@@ -42,7 +42,7 @@ export default function DefaultsForm({ defaults }: { defaults: Defaults }) {
           min={0}
           defaultValue={defaults.retry_count}
           required
-          className="w-full rounded-md border border-zinc-300 px-3 py-2 text-base focus:border-zinc-500 focus:outline-none"
+          className="w-full rounded-md border border-zinc-300 px-3 py-2 text-base focus:border-zinc-500 focus:outline-none focus:ring-2 focus:ring-zinc-900 focus:ring-offset-1"
         />
       </div>
 
@@ -56,7 +56,7 @@ export default function DefaultsForm({ defaults }: { defaults: Defaults }) {
           type="time"
           defaultValue={defaults.daily_schedule_time}
           required
-          className="w-full rounded-md border border-zinc-300 px-3 py-2 text-base focus:border-zinc-500 focus:outline-none"
+          className="w-full rounded-md border border-zinc-300 px-3 py-2 text-base focus:border-zinc-500 focus:outline-none focus:ring-2 focus:ring-zinc-900 focus:ring-offset-1"
         />
       </div>
 

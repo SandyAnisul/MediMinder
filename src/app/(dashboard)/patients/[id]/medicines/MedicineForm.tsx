@@ -68,8 +68,11 @@ export default function MedicineForm({
     >
       <div className="grid grid-cols-2 gap-3">
         <div className="space-y-1">
-          <label className="block text-xs font-medium text-zinc-600">Session</label>
+          <label htmlFor="session_id" className="block text-xs font-medium text-zinc-600">
+            Session
+          </label>
           <select
+            id="session_id"
             name="session_id"
             defaultValue={medicine?.session_id ?? sessions[0]?.id ?? ""}
             required
@@ -83,8 +86,11 @@ export default function MedicineForm({
           </select>
         </div>
         <div className="space-y-1">
-          <label className="block text-xs font-medium text-zinc-600">Time to take</label>
+          <label htmlFor="time_to_take" className="block text-xs font-medium text-zinc-600">
+            Time to take
+          </label>
           <input
+            id="time_to_take"
             name="time_to_take"
             type="time"
             defaultValue={medicine?.time_to_take?.slice(0, 5)}
@@ -95,8 +101,11 @@ export default function MedicineForm({
       </div>
 
       <div className="space-y-1">
-        <label className="block text-xs font-medium text-zinc-600">Medicine name (English)</label>
+        <label htmlFor="name" className="block text-xs font-medium text-zinc-600">
+          Medicine name (English)
+        </label>
         <input
+          id="name"
           name="name"
           type="text"
           defaultValue={medicine?.name}
@@ -107,8 +116,11 @@ export default function MedicineForm({
 
       <div className="grid grid-cols-2 gap-3">
         <div className="space-y-1">
-          <label className="block text-xs font-medium text-zinc-600">Dosage</label>
+          <label htmlFor="dosage" className="block text-xs font-medium text-zinc-600">
+            Dosage
+          </label>
           <input
+            id="dosage"
             name="dosage"
             type="number"
             step="0.5"
@@ -119,8 +131,11 @@ export default function MedicineForm({
           />
         </div>
         <div className="space-y-1">
-          <label className="block text-xs font-medium text-zinc-600">Unit</label>
+          <label htmlFor="dosage_unit" className="block text-xs font-medium text-zinc-600">
+            Unit
+          </label>
           <input
+            id="dosage_unit"
             name="dosage_unit"
             type="text"
             placeholder="tablet, ml…"
@@ -132,8 +147,11 @@ export default function MedicineForm({
       </div>
 
       <div className="space-y-1">
-        <label className="block text-xs font-medium text-zinc-600">Frequency</label>
+        <label htmlFor="frequency_type" className="block text-xs font-medium text-zinc-600">
+          Frequency
+        </label>
         <select
+          id="frequency_type"
           name="frequency_type"
           value={frequencyType}
           onChange={(e) => setFrequencyType(e.target.value as FrequencyType)}
@@ -161,8 +179,11 @@ export default function MedicineForm({
 
       <div className="grid grid-cols-2 gap-3">
         <div className="space-y-1">
-          <label className="block text-xs font-medium text-zinc-600">Stock quantity</label>
+          <label htmlFor="stock_qty" className="block text-xs font-medium text-zinc-600">
+            Stock quantity
+          </label>
           <input
+            id="stock_qty"
             name="stock_qty"
             type="number"
             step="0.5"
@@ -173,8 +194,11 @@ export default function MedicineForm({
           />
         </div>
         <div className="space-y-1">
-          <label className="block text-xs font-medium text-zinc-600">Low stock threshold</label>
+          <label htmlFor="low_stock_threshold" className="block text-xs font-medium text-zinc-600">
+            Low stock threshold
+          </label>
           <input
+            id="low_stock_threshold"
             name="low_stock_threshold"
             type="number"
             step="0.5"
@@ -188,8 +212,11 @@ export default function MedicineForm({
 
       <div className="grid grid-cols-2 gap-3">
         <div className="space-y-1">
-          <label className="block text-xs font-medium text-zinc-600">Start date</label>
+          <label htmlFor="start_date" className="block text-xs font-medium text-zinc-600">
+            Start date
+          </label>
           <input
+            id="start_date"
             name="start_date"
             type="date"
             defaultValue={medicine?.start_date ?? new Date().toISOString().slice(0, 10)}
@@ -198,8 +225,11 @@ export default function MedicineForm({
           />
         </div>
         <div className="space-y-1">
-          <label className="block text-xs font-medium text-zinc-600">End date (optional)</label>
+          <label htmlFor="end_date" className="block text-xs font-medium text-zinc-600">
+            End date (optional)
+          </label>
           <input
+            id="end_date"
             name="end_date"
             type="date"
             defaultValue={medicine?.end_date ?? ""}

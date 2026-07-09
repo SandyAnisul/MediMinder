@@ -29,7 +29,7 @@ export default function ChangePasswordForm() {
           minLength={8}
           required
           autoComplete="new-password"
-          className="w-full rounded-md border border-zinc-300 px-3 py-2 text-base focus:border-zinc-500 focus:outline-none"
+          className="w-full rounded-md border border-zinc-300 px-3 py-2 text-base focus:border-zinc-500 focus:outline-none focus:ring-2 focus:ring-zinc-900 focus:ring-offset-1"
         />
       </div>
 
@@ -44,7 +44,7 @@ export default function ChangePasswordForm() {
           minLength={8}
           required
           autoComplete="new-password"
-          className="w-full rounded-md border border-zinc-300 px-3 py-2 text-base focus:border-zinc-500 focus:outline-none"
+          className="w-full rounded-md border border-zinc-300 px-3 py-2 text-base focus:border-zinc-500 focus:outline-none focus:ring-2 focus:ring-zinc-900 focus:ring-offset-1"
         />
       </div>
 

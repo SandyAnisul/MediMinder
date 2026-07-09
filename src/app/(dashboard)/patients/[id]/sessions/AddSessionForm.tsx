@@ -20,8 +20,11 @@ export default function AddSessionForm({ patientId, nextOrder }: { patientId: st
       className="flex flex-wrap items-end gap-3 rounded-lg border border-zinc-200 bg-white p-4"
     >
       <div className="space-y-1">
-        <label className="block text-xs font-medium text-zinc-600">Name</label>
+        <label htmlFor="new-session-name" className="block text-xs font-medium text-zinc-600">
+          Name
+        </label>
         <input
+          id="new-session-name"
           name="name"
           type="text"
           placeholder="e.g. Before Breakfast"
@@ -30,12 +33,23 @@ export default function AddSessionForm({ patientId, nextOrder }: { patientId: st
         />
       </div>
       <div className="space-y-1">
-        <label className="block text-xs font-medium text-zinc-600">Start time</label>
-        <input name="start_time" type="time" required className="rounded-md border border-zinc-300 px-2 py-1 text-sm" />
+        <label htmlFor="new-session-start-time" className="block text-xs font-medium text-zinc-600">
+          Start time
+        </label>
+        <input
+          id="new-session-start-time"
+          name="start_time"
+          type="time"
+          required
+          className="rounded-md border border-zinc-300 px-2 py-1 text-sm"
+        />
       </div>
       <div className="space-y-1">
-        <label className="block text-xs font-medium text-zinc-600">Order</label>
+        <label htmlFor="new-session-order" className="block text-xs font-medium text-zinc-600">
+          Order
+        </label>
         <input
+          id="new-session-order"
           name="sort_order"
           type="number"
           defaultValue={nextOrder}

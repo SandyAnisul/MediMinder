@@ -51,6 +51,7 @@ export default async function AdherenceLogPage({
       <div className="flex flex-wrap gap-2">
         <Link
           href={`/patients/${id}/adherence`}
+          aria-current={!status ? "page" : undefined}
           className={`rounded-full px-3 py-1 text-xs font-medium ${!status ? "bg-zinc-900 text-white" : "bg-zinc-100 text-zinc-600"}`}
         >
           All
@@ -59,6 +60,7 @@ export default async function AdherenceLogPage({
           <Link
             key={s}
             href={`/patients/${id}/adherence?status=${s}`}
+            aria-current={status === s ? "page" : undefined}
             className={`rounded-full px-3 py-1 text-xs font-medium capitalize ${status === s ? "bg-zinc-900 text-white" : "bg-zinc-100 text-zinc-600"}`}
           >
             {s}

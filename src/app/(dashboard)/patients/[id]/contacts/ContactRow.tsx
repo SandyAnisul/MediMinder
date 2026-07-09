@@ -88,8 +88,11 @@ export default function ContactRow({
         className="flex flex-wrap items-end gap-3"
       >
         <div className="space-y-1">
-          <label className="block text-xs font-medium text-zinc-600">Role</label>
+          <label htmlFor={`role-${contact.id}`} className="block text-xs font-medium text-zinc-600">
+            Role
+          </label>
           <select
+            id={`role-${contact.id}`}
             name="role"
             defaultValue={contact.role}
             className="rounded-md border border-zinc-300 px-2 py-1 text-sm"
@@ -101,8 +104,11 @@ export default function ContactRow({
           </select>
         </div>
         <div className="space-y-1">
-          <label className="block text-xs font-medium text-zinc-600">Name</label>
+          <label htmlFor={`name-${contact.id}`} className="block text-xs font-medium text-zinc-600">
+            Name
+          </label>
           <input
+            id={`name-${contact.id}`}
             name="name"
             type="text"
             defaultValue={contact.name}
@@ -111,8 +117,11 @@ export default function ContactRow({
           />
         </div>
         <div className="space-y-1">
-          <label className="block text-xs font-medium text-zinc-600">Phone</label>
+          <label htmlFor={`phone-${contact.id}`} className="block text-xs font-medium text-zinc-600">
+            Phone
+          </label>
           <input
+            id={`phone-${contact.id}`}
             name="phone"
             type="text"
             defaultValue={contact.phone ?? ""}

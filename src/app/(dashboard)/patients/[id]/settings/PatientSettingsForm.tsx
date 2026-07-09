@@ -13,8 +13,11 @@ export default function PatientSettingsForm({ patient }: { patient: Patient }) {
   return (
     <form action={formAction} className="max-w-md space-y-4 rounded-lg border border-zinc-200 bg-white p-6">
       <div className="space-y-1">
-        <label className="block text-sm font-medium text-zinc-700">Name</label>
+        <label htmlFor="name" className="block text-sm font-medium text-zinc-700">
+          Name
+        </label>
         <input
+          id="name"
           name="name"
           type="text"
           defaultValue={patient.name}
@@ -24,8 +27,11 @@ export default function PatientSettingsForm({ patient }: { patient: Patient }) {
       </div>
 
       <div className="space-y-1">
-        <label className="block text-sm font-medium text-zinc-700">Time zone</label>
+        <label htmlFor="timezone" className="block text-sm font-medium text-zinc-700">
+          Time zone
+        </label>
         <input
+          id="timezone"
           name="timezone"
           type="text"
           defaultValue={patient.timezone}
@@ -35,8 +41,11 @@ export default function PatientSettingsForm({ patient }: { patient: Patient }) {
       </div>
 
       <div className="space-y-1">
-        <label className="block text-sm font-medium text-zinc-700">Language</label>
+        <label htmlFor="language" className="block text-sm font-medium text-zinc-700">
+          Language
+        </label>
         <select
+          id="language"
           name="language"
           defaultValue={patient.language}
           className="w-full rounded-md border border-zinc-300 px-3 py-2 text-base"
@@ -49,8 +58,11 @@ export default function PatientSettingsForm({ patient }: { patient: Patient }) {
 
       <div className="grid grid-cols-2 gap-3">
         <div className="space-y-1">
-          <label className="block text-sm font-medium text-zinc-700">Escalation (minutes)</label>
+          <label htmlFor="escalation_minutes" className="block text-sm font-medium text-zinc-700">
+            Escalation (minutes)
+          </label>
           <input
+            id="escalation_minutes"
             name="escalation_minutes"
             type="number"
             min={1}
@@ -60,8 +72,11 @@ export default function PatientSettingsForm({ patient }: { patient: Patient }) {
           />
         </div>
         <div className="space-y-1">
-          <label className="block text-sm font-medium text-zinc-700">Retries</label>
+          <label htmlFor="retry_count" className="block text-sm font-medium text-zinc-700">
+            Retries
+          </label>
           <input
+            id="retry_count"
             name="retry_count"
             type="number"
             min={0}

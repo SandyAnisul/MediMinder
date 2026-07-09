@@ -1,15 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
-
-const TABS = [
-  { href: "", label: "Overview" },
-  { href: "/contacts", label: "Contacts" },
-  { href: "/sessions", label: "Sessions" },
-  { href: "/medicines", label: "Medicines" },
-  { href: "/adherence", label: "Adherence log" },
-  { href: "/settings", label: "Settings" },
-];
+import PatientTabs from "./PatientTabs";
 
 export default async function PatientLayout({
   children,
@@ -39,17 +31,7 @@ export default async function PatientLayout({
         <h1 className="mt-1 text-xl font-semibold text-zinc-900">{patient.name}</h1>
       </div>
 
-      <nav className="mb-6 flex gap-1 border-b border-zinc-200">
-        {TABS.map((tab) => (
-          <Link
-            key={tab.label}
-            href={`/patients/${id}${tab.href}`}
-            className="rounded-t-md px-3 py-2 text-sm font-medium text-zinc-600 hover:bg-zinc-100 hover:text-zinc-900"
-          >
-            {tab.label}
-          </Link>
-        ))}
-      </nav>
+      <PatientTabs patientId={id} />
 
       {children}
     </div>

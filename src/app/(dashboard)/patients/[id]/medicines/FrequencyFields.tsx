@@ -48,8 +48,8 @@ export default function FrequencyFields({
 
   if (frequencyType === "weekly") {
     return (
-      <div className="space-y-1">
-        <label className="block text-xs font-medium text-zinc-600">Weekdays</label>
+      <fieldset className="space-y-1">
+        <legend className="block text-xs font-medium text-zinc-600">Weekdays</legend>
         <div className="flex gap-2">
           {WEEKDAY_LABELS.map((label, idx) => {
             const checked = weekdays.includes(idx);
@@ -67,7 +67,7 @@ export default function FrequencyFields({
             );
           })}
         </div>
-      </div>
+      </fieldset>
     );
   }
 
@@ -102,7 +102,8 @@ export default function FrequencyFields({
             <button
               type="button"
               onClick={() => setDates(dates.filter((_, i) => i !== idx))}
-              className="text-zinc-400 hover:text-red-600"
+              aria-label={`Remove ${date}`}
+              className="text-zinc-500 hover:text-red-600"
             >
               ×
             </button>
@@ -110,6 +111,7 @@ export default function FrequencyFields({
         ))}
         <input
           type="date"
+          aria-label="Add date"
           onChange={(e) => {
             if (e.target.value && !dates.includes(e.target.value)) {
               setDates([...dates, e.target.value].sort());
